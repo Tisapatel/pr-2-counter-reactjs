@@ -1,0 +1,350 @@
+/* Counter Container */
+.counter-container {
+  min-height: 100vh;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Glow */
+.background-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(20, 83, 45, 0.2) 0%, transparent 70%);
+}
+
+/* Content Wrapper */
+.counter-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Watch Wrapper */
+.watch-wrapper {
+  position: relative;
+}
+
+/* Outer Glow Effect */
+.outer-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(to right, #22c55e, #84cc16);
+  filter: blur(3rem);
+  opacity: 0.4;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Watch Body */
+.watch-body {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f2937 0%, #000000 50%, #1f2937 100%);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  border: 0.5rem solid rgba(20, 83, 45, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Watch Inner Circle */
+.watch-inner {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: #000000;
+  border: 0.25rem solid rgba(20, 83, 45, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner Glow */
+.inner-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(132, 204, 22, 0.2) 100%);
+  border-radius: 50%;
+}
+
+/* Counter Display */
+.counter-display {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.counter-seconds,
+.counter-centiseconds {
+  font-size: 5rem;
+  font-weight: 900;
+  background: linear-gradient(to right, #86efac, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 30px rgba(34, 197, 94, 0.8));
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Center Glow Wrapper */
+.center-glow-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-glow {
+  width: 8rem;
+  height: 8rem;
+  background: rgba(134, 239, 172, 0.3);
+  border-radius: 50%;
+  filter: blur(2rem);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Side Buttons */
+.side-button {
+  position: absolute;
+  width: 2rem;
+  height: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.125rem solid #15803d;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.side-button-left {
+  left: 0;
+  transform: translate(-1rem, -50%);
+  background: linear-gradient(to right, #15803d, #166534);
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.side-button-right {
+  right: 0;
+  transform: translate(1rem, -50%);
+  background: linear-gradient(to left, #15803d, #166534);
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+/* Top Button */
+.top-button {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -1.5rem);
+  width: 3rem;
+  height: 3.5rem;
+  background: linear-gradient(to bottom, #15803d, #166534, #14532d);
+  border-radius: 1rem 1rem 0 0;
+  border: 0.25rem solid #16a34a;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom Button */
+.bottom-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 1rem);
+  width: 4rem;
+  height: 2rem;
+  background: linear-gradient(to bottom, #14532d, #000000);
+  border-radius: 0 0 0.75rem 0.75rem;
+  border: 0.25rem solid #15803d;
+}
+
+/* Title Section */
+.title-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 3.75rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(to right, #86efac, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 30px rgba(34, 197, 94, 0.8));
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #16a34a;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Control Panel */
+.control-panel {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 0.125rem solid rgba(22, 163, 74, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+}
+
+/* Status Display */
+.status-display {
+  text-align: center;
+  color: #22c55e;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Control Buttons */
+.control-button {
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.control-button:hover:not(.disabled) {
+  transform: scale(1.05);
+}
+
+.control-button:active:not(.disabled) {
+  transform: scale(0.95);
+}
+
+.button-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Play Button */
+.play-button:not(.disabled) {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.5);
+}
+
+.play-button:not(.disabled):hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Pause Button */
+.pause-button:not(.disabled) {
+  background: linear-gradient(135deg, #ca8a04, #a16207);
+  box-shadow: 0 10px 15px -3px rgba(234, 179, 8, 0.5);
+}
+
+.pause-button:not(.disabled):hover {
+  background: linear-gradient(135deg, #eab308, #ca8a04);
+}
+
+/* Reset Button */
+.reset-button {
+  background: linear-gradient(135deg, #4b5563, #1f2937);
+}
+
+.reset-button:hover {
+  background: linear-gradient(135deg, #6b7280, #374151);
+}
+
+/* Disabled State */
+.control-button.disabled {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Info Section */
+.info-section {
+  margin-top: 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.info-highlight {
+  color: #86efac;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-text {
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .watch-body {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .watch-inner {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .counter-seconds,
+  .counter-centiseconds {
+    font-size: 4rem;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .control-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
